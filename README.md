@@ -77,7 +77,7 @@ userInfo.arrowShow()
 解析：箭头函数类似于变量不定义this，而是引用所以词法环境中的this
       这一点很重要，所以它会引用arrowShow下的this，而不是setTimeout下的windows
    
-## 什么是跨域请求？怎样解决？
+## 4. 什么是跨域请求？怎样解决？
 跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器对JavaScript施加的安全限制。
 
 所谓同源是指，域名，协议，端口均相同，浏览器执行js脚本的时候，会检查这个脚本属于哪一个页面，如果不是同源页面，就不会执行
@@ -90,7 +90,7 @@ userInfo.arrowShow()
 - document.domain + iframe
 - window.name、window.postMessage
 
-## 请描述一下 cookie 以及其优缺点
+## 5. 请描述一下 cookie 以及其优缺点
 
 cookie虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。 第一：每个特定的域名下最多生成20个cookie
 
@@ -112,23 +112,23 @@ IE 提供了一种存储可以持久化用户数据，叫做uerData，从IE5.0�
   
    
 
-## 4. vue相关
-### 4.1 v-if与v-show的区别？
+## 6. vue相关
+### v-if与v-show的区别？
 - 在切换 v-if 块时，Vue.js 有一个局部编译/卸载过程，因为 v-if 之中的模板也可能包括数据绑定或子组件。
 - v-show 简单得多——元素始终被编译并保留，只是简单地基于 CSS 切换。
 - v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。
-### 4.2 computed 属性可以依赖那些数据做衍生计算?
+### computed 属性可以依赖那些数据做衍生计算?
 - data
 - props
 - computed
 
-### 4.3 computed 和 watch 主要区别？
+### computed 和 watch 主要区别？
 computed 需要返回一个值作为响应属性，不支持异步操作
 watch 主要用来做一些复杂的 操作，异步操作等。
 
-### 4.4 vue中列表循环 :key 值设置用 index 和 id 有什么区别？
+### vue中列表循环 :key 值设置用 index 和 id 有什么区别？
 
 
-## vuex相关
+## 7. vuex相关
 解释一下对 action 和 mutation 的理解？
 
