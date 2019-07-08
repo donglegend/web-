@@ -77,7 +77,39 @@ userInfo.arrowShow()
 解析：箭头函数类似于变量不定义this，而是引用所以词法环境中的this
       这一点很重要，所以它会引用arrowShow下的this，而不是setTimeout下的windows
    
-## 
+## 什么是跨域请求？怎样解决？
+跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器对JavaScript施加的安全限制。
+
+所谓同源是指，域名，协议，端口均相同，浏览器执行js脚本的时候，会检查这个脚本属于哪一个页面，如果不是同源页面，就不会执行
+
+解决方法
+
+- jsonp（jsonp 的原理是动态插入 script 标签）
+- 服务器设置反向代理
+- 服务端 setHeader("Access-Control-Allow-Origin", "*");
+- document.domain + iframe
+- window.name、window.postMessage
+
+## 请描述一下 cookie 以及其优缺点
+
+cookie虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。 第一：每个特定的域名下最多生成20个cookie
+
+1.IE6或更低版本最多20个cookie 2.IE7和之后的版本最后可以有50个cookie。 3.Firefox最多50个cookie 4.chrome和Safari没有做硬性限制 IE和Opera 会清理近期最少使用的cookie，Firefox会随机清理cookie。
+
+cookie的最大大约为4096字节，为了兼容性，一般不能超过4095字节。
+
+IE 提供了一种存储可以持久化用户数据，叫做uerData，从IE5.0就开始支持。每个数据最多128K，每个域名下最多1M。这个持久化数据放在缓存中，如果缓存没有清理，那么会一直存在。
+
+优点：极高的扩展性和可用性
+
+1.通过良好的编程，控制保存在cookie中的session对象的大小。 2.通过加密和安全传输技术（SSL），减少cookie被破解的可能性。 3.只在cookie中存放不敏感数据，即使被盗也不会有重大损失。 4.控制cookie的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的cookie。
+
+缺点： 1.Cookie数量和长度的限制。每个domain最多只能有20条cookie，每个cookie长度不能超过4KB，否则会被截掉。
+
+2.安全性问题。如果cookie被人拦截了，那人就可以取得所有的session信息。即使加密也与事无补，因为拦截者并不需要知道cookie的意义，他只要原样转发cookie就可以达到目的了。
+
+3.有些状态不可能保存在客户端。例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，那么它起不到任何作用。
+  
    
 
 ## 4. vue相关
