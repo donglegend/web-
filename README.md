@@ -8,9 +8,11 @@ IE模型的宽和高是content+padding+border
 
 
 ## 2. 移动端各设备页面适配怎么实现的？
+可以通过 rem 或者 vw|vh来实现页面适配，
+要求还原度不高的情况下，也可以使用 css3的媒体查询
 
 
-## 以下代码执行结果是什么？为什么？
+## 3. 以下代码执行结果是什么？为什么？
  第一段代码：
 ```javascript
 var name = 'a';
@@ -81,21 +83,21 @@ userInfo.arrowShow()
 ## 
    
 
-## 3. vue相关
-### 3.1 v-if与v-show的区别？
+## 4. vue相关
+### 4.1 v-if与v-show的区别？
 - 在切换 v-if 块时，Vue.js 有一个局部编译/卸载过程，因为 v-if 之中的模板也可能包括数据绑定或子组件。
 - v-show 简单得多——元素始终被编译并保留，只是简单地基于 CSS 切换。
 - v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。
-### 3.2 computed 属性可以依赖那些数据做衍生计算?
+### 4.2 computed 属性可以依赖那些数据做衍生计算?
 - data
 - props
 - computed
 
-### 3.3 computed 和 watch 主要区别？
+### 4.3 computed 和 watch 主要区别？
 computed 需要返回一个值作为响应属性，不支持异步操作
 watch 主要用来做一些复杂的 操作，异步操作等。
 
-### 3.4 vue中列表循环 :key 值设置用 index 和 id 有什么区别？
+### 4.4 vue中列表循环 :key 值设置用 index 和 id 有什么区别？
 
 
 ## vuex相关
