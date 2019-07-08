@@ -1,10 +1,6 @@
 ## 1. 介绍一下css盒模型
-基本概念:标准模型+IE模型
-
-标准模型和IE模型区别
-
-标准模型的宽度是content
-IE模型的宽和高是content+padding+border
+盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).
+有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;
 
 
 ## 2. 移动端各设备页面适配怎么实现的？
