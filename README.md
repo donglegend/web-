@@ -11,6 +11,7 @@ IE模型的宽和高是content+padding+border
 
 
 ## 以下代码执行结果是什么？为什么？
+ 第一段代码：
 ```javascript
 var name = 'a';
 function showName() {
@@ -22,6 +23,40 @@ function main() {
 }
 main();
 ```
+第二段代码：
+```javascript
+function fn(){
+  return print()
+  function print(){
+    console.log('1')
+  }
+}
+let fn2 = function fn(){
+  console.log(fn)
+  return print2()
+  var print2 = function(){
+    console.log('2')
+  }
+}
+fn()
+fn2()
+```
+
+答案: a
+解析:  
+   1. JavaScript在运行是分为两个步骤，先编译后执行
+   2. 编译会根据所有正式声明生成词法作用域，正式声明包括标识符（var、let等），函数参数。
+   3. 运行时会根据词法作用域引用变量
+   一句话：函数中变量是在定义时决定的，不是在运行时
+   
+答案：1 ,  fn函数 ,  print2 is not a function
+解析： 
+   1. 函数声明会加入变量放入临近的作用域中，而函数表达式会将变量放入自己的作用域中
+   2. 函数声明的变量提升是可以直接调用函数的，而print2变量提升此时被初始化为undefined
+   
+   
+## 
+   
 
 ## 3. vue相关
 ### 3.1 v-if与v-show的区别？
