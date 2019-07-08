@@ -23,6 +23,15 @@ function main() {
 }
 main();
 ```
+
+答案: a
+解析:  
+   1. JavaScript在运行是分为两个步骤，先编译后执行
+   2. 编译会根据所有正式声明生成词法作用域，正式声明包括标识符（var、let等），函数参数。
+   3. 运行时会根据词法作用域引用变量
+   一句话：函数中变量是在定义时决定的，不是在运行时
+   
+
 第二段代码：
 ```javascript
 function fn(){
@@ -41,19 +50,33 @@ let fn2 = function fn(){
 fn()
 fn2()
 ```
-
-答案: a
-解析:  
-   1. JavaScript在运行是分为两个步骤，先编译后执行
-   2. 编译会根据所有正式声明生成词法作用域，正式声明包括标识符（var、let等），函数参数。
-   3. 运行时会根据词法作用域引用变量
-   一句话：函数中变量是在定义时决定的，不是在运行时
-   
 答案：1 ,  fn函数 ,  print2 is not a function
 解析： 
    1. 函数声明会加入变量放入临近的作用域中，而函数表达式会将变量放入自己的作用域中
    2. 函数声明的变量提升是可以直接调用函数的，而print2变量提升此时被初始化为undefined
    
+
+第三段代码：
+```javascript
+var userInfo = {
+  name: "zhangsan",
+  show() {
+      setTimeout(function(){
+        console.log(this)
+      },100)      
+  },
+  arrowShow(){
+      setTimeout(()=>{
+        console.log(this)
+      },100)      
+  }
+}
+userInfo.show()
+userInfo.arrowShow()
+```
+答案：Window , userInfo
+解析：箭头函数类似于变量不定义this，而是引用所以词法环境中的this
+      这一点很重要，所以它会引用arrowShow下的this，而不是setTimeout下的windows
    
 ## 
    
