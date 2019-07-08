@@ -130,3 +130,5 @@ watch 主要用来做一些复杂的 操作，异步操作等。
 
 
 ## vuex相关
+解释一下对 action 和 mutation 的理解？
+
